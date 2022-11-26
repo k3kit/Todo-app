@@ -1,0 +1,19 @@
+.todo__list {
+  background-color: aliceblue;
+  width: 80%;
+  border-radius: 25px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.todo__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
