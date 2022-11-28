@@ -55,7 +55,7 @@ export const editTask = async (todo: Todo) => {
 
 export const completeTask = async (id: string, complete: boolean) => {
   try {
-    await updateDoc(doc(db, 'todos', id), { done: complete });
+    await updateDoc(doc(db, 'todos', id), { done: !complete });
   } catch (e) {
     console.error('Error complete task: ', e);
   }
