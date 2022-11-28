@@ -23,7 +23,6 @@ export interface FileType {
 export const MainPage = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const { isOpen, toggle } = useModal();
-  const [file, setFile] = useState<FileType[]>([]);
   useEffect(() => {
     const subscribeToTodos = getAllTask(setTodos);
     const unsubscribe = subscribeToTodos();

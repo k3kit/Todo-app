@@ -42,6 +42,9 @@
   &__complete {
     margin: 1rem;
   }
+  &__deadline{
+    background-color: #e0455f70;
+  }
 }
 
 .todo__wrapper {
@@ -69,3 +72,8 @@
   padding: 2rem;
   margin: 1rem;
 }
+
+.card__date span{
+  color: #8080807a	;
+}
+card__deadline{}

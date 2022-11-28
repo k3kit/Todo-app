@@ -1,11 +1,13 @@
-import { async } from '@firebase/util';
-import { Timestamp } from 'firebase/firestore';
+import dayjs from 'dayjs';
 import React, { ChangeEvent, FC, useRef, useState } from 'react';
-import { useModal } from '../../hooks/UseModal';
-import { FileType, Todo } from '../../pages/main-page/MainPage';
+import { Todo } from '../../pages/main-page/MainPage';
 import { addTask, uploadFile } from '../../todos.service';
 import { Button } from '../Button/Button';
 import './style.scss';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import ruLocale from 'dayjs/locale/en';
+dayjs.locale(ruLocale);
+dayjs.extend(localizedFormat);
 interface FormProps {
   setFormData?: Todo;
   toggle: () => void;
@@ -57,10 +59,13 @@ export const Form: FC<FormProps> = ({ setFormData = initValue, toggle }) => {
         />
       </div>
       <div>
+        <label htmlFor="date">Deadline:</label>
         <input
           placeholder="Add date"
           type="date"
           required
+          id="date"
+          min={dayjs(Date.now()).format('YYYY-MM-DD')}
           value={task.deadline}
           onChange={(e) => setTask({ ...task, deadline: e.target.value })}
         />
