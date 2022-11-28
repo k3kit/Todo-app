@@ -1,14 +1,47 @@
 .todo__list {
-  background-color: aliceblue;
-  width: 80%;
+  width: 100%;
   border-radius: 25px;
 }
 
-.card {
+.card,
+.card_done {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 1rem;
+  background-color: aliceblue;
+  border-radius: 25px;
+  background-color: aliceblue;
+  border-radius: 25px;
+  justify-content: space-between;
+  &_done {
+    background-color: #45e04770;
+  }
+  &__info {
+    margin: 1rem;
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3,
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__button {
+    outline: none;
+    border: 0;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__complete {
+    margin: 1rem;
+  }
 }
 
 .todo__wrapper {
@@ -16,4 +49,23 @@
   align-items: center;
   justify-content: center;
   padding: 30px;
+}
+
+.button-wrapper {
+  margin-left: 1rem;
+  button {
+    margin: 0.5rem;
+  }
+}
+
+.button-form {
+  margin-left: 6rem;
+}
+
+.form-wrapper {
+  width: 100%;
+  border-radius: 25px;
+  background-color: aliceblue;
+  padding: 2rem;
+  margin: 1rem;
 }
