@@ -1,5 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Todo } from '../../pages/main-page/MainPage';
+import { Button } from '../Button/Button';
+import './style.scss';
 interface FormProps {
   onEdit: (task: Todo) => void;
   setFormData: Todo;
@@ -12,7 +14,7 @@ export const FormEdit: FC<FormProps> = ({ setFormData, onEdit, it }) => {
     onEdit(task);
   };
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="form">
       <div>
         <input
           placeholder="Add title"
@@ -43,10 +45,10 @@ export const FormEdit: FC<FormProps> = ({ setFormData, onEdit, it }) => {
           placeholder="update file"
           required
           type="file"
-          onChange={(e) => setTask({ ...task, file: e.target.value })}
+          // onChange={(e) => setTask({ ...task, file: e.target.value })}
         />
       </div>
-      <button type="submit">update</button>
+      <Button type="submit">update</Button>
     </form>
   );
 };
